@@ -51,9 +51,9 @@ function validaLogin($usuario, $pass, $nombreFichero)
 {
     if ($resultado = buscaUsuario($usuario, $nombreFichero)) {
         if ($pass === $resultado[2]) {
-            $resultado = true;
+            return true;
         } else {
-            $resultado = false;
+            return false;
         }
     } else {
         return false;

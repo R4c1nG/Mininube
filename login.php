@@ -16,17 +16,17 @@ if (isset($_REQUEST["acceder"])) {
     cUsuario($usuario, $errores);
 
     if(! empty($errores)) {
-        require ("forms/formLogin.php");
+        header("location:login.php");
     } else {
-        if( validaLogin($usuario, $pass) ) {
+        if( validaLogin($usuario, $pass, $ficheroUsuarios) ) {
             $_SESSION["user"] = $usuario;
             header("location:user.php");
         } else {
-            require ("forms/formLogin.php");
+            header("location:login.php");
         }
     }
 } else if(isset($_REQUEST["registro"])){
-    require ("forms/formAlta.php");
+    header("location:alta.php");
 } else {
     require ("forms/formLogin.php");
 }

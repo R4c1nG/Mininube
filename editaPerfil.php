@@ -14,21 +14,22 @@ $user=$_SESSION['user'];
 cabecera("Bienvenido");
 echo "<img src=\"img_usuarios/$user\" height='50px' width='50px'>";
 echo "Hola $user";
-require("forms/formUser.php");
 
-if(isset($_REQUEST["publico"])) {
+require ("forms/formCambiaimg.php");
 
+if (isset($_REQUEST["editar"])) {
+   if(campoImagen("imagen",  $dirImagenes, $errores, $extensionesValidas, $user)) {
+       echo "Imagen cambiada con éxito.";
+   } else {
+       echo "errores";
+        require ("forms/formCambiaimg.php");
+   }
 }
-if(isset($_REQUEST["privado"])){
-
+if (isset($_REQUEST["volver"])) {
+    header("location:user.php"); 
 }
-if(isset($_REQUEST["cambia"])){
-    header("location:editaPerfil.php");
-}
-if(isset($_REQUEST["cerrar"])){
+if (isset($_REQUEST["cerrar"])) {
     destruir();
     header("location:login.php");
 }
-
-
 ?>

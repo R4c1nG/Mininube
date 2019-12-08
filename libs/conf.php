@@ -1,4 +1,5 @@
 <?php
+    $errores=[];
     $dirImagenes = "img_usuarios/";
     $documentos = "documentos/";
     $ficheroUsuarios = "ficheros/usuarios.txt";

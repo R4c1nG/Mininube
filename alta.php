@@ -63,11 +63,9 @@ if (! isset($_REQUEST["insertar"])) {
             header("location:login.php");
         }
 
+    } else {
+        require("forms/formAlta.php");
     }
 }
-if(!empty($errores)){
-  
-    require("forms/formAlta.php");
-    
-}
+ 
 ?>
