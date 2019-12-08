@@ -58,13 +58,11 @@ if (! isset($_REQUEST["insertar"])) {
         $linea = $nombreApellidos . ";" . $usuario . ";" . $pass . ";" . $fecha . ";" . $fechaFinSuscripcion . ";" . $imagen;
         if(!escribeLinea($ficheroUsuarios, $linea)){
             $errores[] = "Ha habido un problema, vuelve a intentarlo";
+            require ("forms/formAlta.php");
+        } else {
+            header("location:login.php");
         }
 
-        /*
-         * Aqui ya se ha dado de alta con éxito
-         * En este momento es donde pasaremos al formulario donde se logueará o directamente
-         * lo daremos por logueado en el sistema
-         */
     }
 }
 if(!empty($errores)){

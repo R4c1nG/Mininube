@@ -82,18 +82,5 @@ function devuelveDir($path)
     }
 }
 
-function validaLogin($usuario, $pass, $nombreFichero)
-{
-    if ($resultado = buscaUsuario($usuario, $nombreFichero)) {
-        if ($pass === $resultado[2]) {
-            $resultado = true;
-        } else {
-            $resultado = false;
-        }
-        return $resultado;
-    } else {
-        return false;
-    }
-}
 
 ?>
