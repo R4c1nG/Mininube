@@ -65,6 +65,8 @@ function validaLogin($usuario, $pass, $nombreFichero)
  * muestraDirectorio que recorre un directorio mostrando los nombre de los ficheros que contiene.
  * Devuelve false en caso de que la ruta pasada no sea un directorio
  */
+
+//devuelve ficheros de las carpetas
 function devuelveDir($path)
 {
     if (is_dir($path)) {
@@ -81,6 +83,25 @@ function devuelveDir($path)
         return false;
     }
 }
+
+//devuelve carpetas
+function devuelveCarpetas($path)
+{
+    if (is_dir($path)) {
+        $arbol = [];
+        $dir = opendir($path);
+        while ($elemento = readdir($dir)) {
+            if (is_dir($path.$elemento) && $elemento != "." && $elemento != "..") {
+                $arbol[] = $elemento;
+            }
+        }
+        closedir($dir);
+        return $arbol;
+    } else {
+        return false;
+    }
+}
+
 
 function devuelveDirSubdir($dir) {
     if(is_dir($dir)) {

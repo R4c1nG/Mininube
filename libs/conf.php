@@ -7,5 +7,5 @@
     $rutaCarpetaPrivada = "documentos/";
     //añadidas extensiones correctamente
     $extensionesValidas = ["image/jpeg","image/gif","image/png"];
-    $extensionesFicheros = ["application/txt","application/pdf"];
+    $extensionesFicheros = ["text/plain","application/pdf"];
 ?>

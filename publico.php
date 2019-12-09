@@ -12,7 +12,13 @@ $errores = [];
 $user=$_SESSION['user'];
 
 if(isset($_REQUEST["subir"])) {
-
+    $path = recoge("carpeta");
+    $ruta = $rutaCarpetaPublica."/".$path."/";
+    if (campoImagen("nCarp",$ruta,$errores,$extensionesFicheros,$user)) {
+        echo "Documento subido con éxito";
+    } else {
+        echo "Ha ocurrido un error";
+    }
 }
 if (isset($_REQUEST["crear"])) {    
     $nCarp = recoge("nCarp");

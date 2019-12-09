@@ -129,7 +129,7 @@ function cPassword($text, &$errores)
     else
         return 0;
 }
-function campoImagen($nombre, $dir, &$errores, $extensionesValidas, $usuario)
+function campoImagen($nombre, $dir, &$errores, $extensiones, $usuario)
 {
     if ($_FILES[$nombre]['error'] != 0) {
         switch ($_FILES[$nombre]['error']) {
@@ -159,7 +159,7 @@ function campoImagen($nombre, $dir, &$errores, $extensionesValidas, $usuario)
         $nombreArchivo = $_FILES[$nombre]['name'];
         $directorioTemp = $_FILES[$nombre]['tmp_name'];
         $extension = $_FILES['imagen']['type'];
-        if (! in_array($extension, $extensionesValidas)) {
+        if (! in_array($extension, $extensiones)) {
             $errores[$nombre] = "La extensión del archivo no es válida o no se ha subido ningún archivo <br>";
             return 0;
         }
