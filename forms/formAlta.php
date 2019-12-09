@@ -24,7 +24,10 @@
     1 mes <input type="radio" name="nivel" value="1">
     dos meses <input type="radio" name="nivel" value="2">
     <p>
-		<input type="submit" name="insertar" value="Insertar">
+		<input type="submit" name="insertar" value="REGISTRARSE">
+	</p>
+	<p>
+		<input type="submit" name="login" value="LOGIN">
 	</p>
 
 	</form>

@@ -82,5 +82,26 @@ function devuelveDir($path)
     }
 }
 
+function devuelveDirSubdir($dir) {
+    if(is_dir($dir)) {
+        $directorio = opendir($dir);
+        $arbol = [];
+        while($elemento = readdir($directorio)) {
+            if($elemento != "." && $elemento != "..") {
+                if (is_dir("$dir/$elemento")) {
+                    $arbol = array_merge($arbol, devuelveDirSubdir("$dir/$elemento"));
+                } else {
+                    $arbol[] = "$dir/$elemento";
+                }
+            }
+        }
+        
+        closedir($directorio);
+        return $arbol;
+           } else {
+        return false;
+    }
+}
+
 
 ?>

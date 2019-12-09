@@ -17,10 +17,10 @@ echo "Hola $user";
 require("forms/formUser.php");
 
 if(isset($_REQUEST["publico"])) {
-
+    header("location:publico.php");
 }
 if(isset($_REQUEST["privado"])){
-
+    header("location:privado.php");
 }
 if(isset($_REQUEST["cambia"])){
     header("location:editaPerfil.php");

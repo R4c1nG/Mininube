@@ -6,9 +6,10 @@ include_once ("libs/bFicheros.php");
 
 $errores = [];
 
-if (! isset($_REQUEST["insertar"])) {
-    require ("forms/formAlta.php");
-} else {
+if (isset($_REQUEST["login"])) {
+    header("location:login.php");
+    
+} else if (isset($_REQUEST["insertar"])) {
     $nombreApellidos = recoge("nombre");
     $usuario = recoge("usuario");
     $fecha = recoge("fecha");
@@ -66,6 +67,8 @@ if (! isset($_REQUEST["insertar"])) {
     } else {
         require("forms/formAlta.php");
     }
+} else {
+    require ("forms/formAlta.php");
 }
  
 ?>
