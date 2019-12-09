@@ -15,8 +15,16 @@ $user=$_SESSION['user'];
 if(isset($_REQUEST["subir"])) {
  //subirfichero();
 }
-if(isset($_REQUEST["crear"])){
-    require("formCrearCarpeta.php");
+
+if (isset($_REQUEST["crear"])) {    
+    $nCarp = recoge("nCarp");
+    $ruta = $rutaCarpetaPublica."/".$nomCarp."/";
+    if (crearCarpeta($ruta)){
+        echo "Carpeta creada con éxito";
+    }
+    else {
+        echo "Carpeta no creada";
+    }
 }
 if(isset($_REQUEST["volver"])){
     header("location:user.php");

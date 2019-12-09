@@ -10,7 +10,7 @@
     <input type="reset" name="cancelar" value="CANCELAR">
     </p>
 	<p>
-        Nombre de la carpeta:<input type="text">
+        Nombre de la carpeta:<input type="text" name="nomCarp">
         <input type="submit" name="crear" value="CREAR CARPETA"> 
         <input type="submit" name="borrar" value="BORRAR CARPETA">
         <input type="reset" name="cancelar" value="CANCELAR">

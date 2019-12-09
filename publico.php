@@ -14,20 +14,14 @@ $user=$_SESSION['user'];
 if(isset($_REQUEST["subir"])) {
 
 }
-if (isset($_REQUEST["crear"])) {
+if (isset($_REQUEST["crear"])) {    
+    $nCarp = recoge("nCarp");
+    $ruta = $rutaCarpetaPublica."/".$nCarp."/";
     if (crearCarpeta($ruta)){
         echo "Carpeta creada con éxito";
     }
     else {
         echo "Carpeta no creada";
-    }
-}
-if (isset($_REQUEST["borrar"])) {
-    if (borrarCarpeta($ruta)){
-        echo "Carpeta borrada con éxito";
-    }
-    else {
-        echo "Carpeta no borrada (llena)";
     }
 }
 if(isset($_REQUEST["volver"])){
@@ -47,7 +41,6 @@ foreach ($documentos as $doc) {
     echo "<br>$nom \t - \t<a href='$doc' download>Descargar</a>\t - \t<a href='$doc' target='_blank'>Ver archivo</a>";
 }
 require ("forms/formPublico.php");
-$nCarp = recoge("nCarp");
-$ruta = $rutaCarpetaPublica."/".$user."/".$nCarp;
+
 
 ?>
