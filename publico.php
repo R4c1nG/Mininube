@@ -11,18 +11,6 @@ include_once ("libs/bSesiones.php");
 $errores = [];
 $user=$_SESSION['user'];
 
-cabecera("Bienvenido");
-echo "<img src=\"img_usuarios/$user\" height='50px' width='50px'>";
-echo "Hola $user";
-$documentos = devuelveDirSubdir("documentos/publico");
-foreach ($documentos as $doc) {
-    $nom = str_replace("documentos/publico/", "",$doc);
-    echo "<br>$nom \t - \t<a href='$doc' download>Descargar</a>\t - \t<a href='$doc'>Ver archivo</a>";
-}
-require ("forms/formPublico.php");
-$nCarp = recoge("nCarp");
-$ruta = $rutaCarpetaPublica."/".$user."/".$nCarp;
-
 if(isset($_REQUEST["subir"])) {
 
 }
@@ -49,5 +37,17 @@ if(isset($_REQUEST["cerrar"])){
     destruir();
     header("location:login.php");
 }
+
+cabecera("Bienvenido");
+echo "<img src=\"img_usuarios/$user\" height='50px' width='50px'>";
+echo "Hola $user";
+$documentos = devuelveDirSubdir("documentos/publico");
+foreach ($documentos as $doc) {
+    $nom = str_replace("documentos/publico/", "",$doc);
+    echo "<br>$nom \t - \t<a href='$doc' download>Descargar</a>\t - \t<a href='$doc' target='_blank'>Ver archivo</a>";
+}
+require ("forms/formPublico.php");
+$nCarp = recoge("nCarp");
+$ruta = $rutaCarpetaPublica."/".$user."/".$nCarp;
 
 ?>

@@ -11,15 +11,12 @@ include_once ("libs/bSesiones.php");
 $errores = [];
 $user=$_SESSION['user'];
 
-cabecera("Bienvenido");
+
 
 // creo carpeta de usuario en parte publica y privada nada mas se logea si no existe
 crearCarpeta($rutaCarpetaPublica."/".$user);
-crearCarpeta($rutaCarpetaPrivada."/".$user);
-
-echo "<img src=\"img_usuarios/$user\" height='50px' width='50px'>";
-echo "Hola $user";
-require("forms/formUser.php");
+//crearCarpeta($rutaCarpetaPrivada."/".$user);
+//la carpeta privada es la que tiene nombre y se crea automaticamente al crear al usuario
 
 if(isset($_REQUEST["publico"])) {
     header("location:publico.php");
@@ -34,6 +31,11 @@ if(isset($_REQUEST["cerrar"])){
     destruir();
     header("location:login.php");
 }
+cabecera("Bienvenido");
+echo "<img src=\"img_usuarios/$user\" height='50px' width='50px'>";
+echo "Hola $user";
+require("forms/formUser.php");
+
 
 
 ?>

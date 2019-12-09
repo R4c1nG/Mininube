@@ -179,8 +179,3 @@ function campoImagen($nombre, $dir, &$errores, $extensionesValidas, $usuario)
 }
 
 ?>
-
-
-
-
-
