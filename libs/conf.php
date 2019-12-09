@@ -3,6 +3,9 @@
     $dirImagenes = "img_usuarios/";
     $documentos = "documentos/";
     $ficheroUsuarios = "ficheros/usuarios.txt";
-    $extensionesValidas = ["image/jpeg","image/gif"];
-    $extensionesFicheros = ["image/jpeg","image/gif"];//modificar
+    $rutaCarpetaPublica = "documentos/publico/";
+    $rutaCarpetaPrivada = "documentos/privada/";
+    //añadidas extensiones correctamente
+    $extensionesValidas = ["image/jpeg","image/gif","image/png"];
+    $extensionesFicheros = ["application/txt","application/pdf"];
 ?>

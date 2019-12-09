@@ -103,5 +103,32 @@ function devuelveDirSubdir($dir) {
     }
 }
 
+//Crear ficheros si no existen (..IN PROGRESS needs fixing and stuff)
+function creaFichero($nombre, $ruta, $contenido){
+    (file_put_contents($nombre, $ruta, $contenido) !== false) ? true : false;
+}
+
+//Crear carpetas si no existen
+function crearCarpeta($ruta){
+    if (!is_dir(($ruta))){
+        mkdir($ruta);
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+//Borrar carpetas si existen
+function borrarCarpeta($ruta) {
+    if (is_dir(($ruta))){
+        rmdir($ruta);
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
 
 ?>

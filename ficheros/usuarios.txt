@@ -1,1 +1,2 @@
 bea;beabea44;asdasdasd;04-10-1999;09-01-2020;img_usuarios/beabea44;09-12-2019
+testuser;racingerz;asdasd123;26-12-1997;09-01-2020;img_usuarios/racingerz;09-12-2019
