@@ -1,13 +1,13 @@
 <form class="borde" action="" method="POST">
 	<p>	
-		Nombre de la carpeta:<input type="text" name="carpeta">
+		Nombre del fichero:<input type="text" name="carpeta">
 		<!-- Hacer un select que dentro de la opcion haga un foreach (una opcion por nombre de carpeta) -->
         <input type="file" NAME="publico">
         <input type="submit" NAME="subir" value="SUBIR ARCHIVO">
 	</p>
 	<p>
-        Nombre de la carpeta:<input type="text" name="nCarp">
-        <input type="submit" name="crear" value="CREAR CARPETA">
+        Nombre de la carpeta:<input type="text" name="nomCarp">
+        <input type="submit" name="crear" value="CREAR CARPETA"> 
         <input type="reset" name="cancelar" value="CANCELAR">
 	</p>
     <p>

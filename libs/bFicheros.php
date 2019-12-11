@@ -141,14 +141,17 @@ function crearCarpeta($ruta){
 }
 
 //Borrar carpetas si existen
-function borrarCarpeta($ruta) {
-    if (is_dir(($ruta))){
-        rmdir($ruta);
-        return true;
-    }
-    else {
-        return false;
-    }
+function borrarCarpeta($carpeta) {
+    foreach(glob($carpeta . "/*") as $archivos_carpeta){             
+        if (is_dir($archivos_carpeta)){
+            if($archivos_carpeta != "." && $archivos_carpeta != "..") {
+                borrarCarpeta($archivos_carpeta);
+            }
+        } else {
+        unlink($archivos_carpeta);
+        }
+      }
+      rmdir($carpeta);
 }
 
 

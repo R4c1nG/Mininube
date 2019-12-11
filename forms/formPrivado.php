@@ -1,6 +1,6 @@
 <form class="borde" action="" method="POST">
 	<p>	
-        <input type="file" NAME="publico">
+        <input type="file" NAME="privado">
         <input type="submit" NAME="subir" value="SUBIR ARCHIVO">
         <input type="reset" name="cancelar" value="CANCELAR">
 	</p>
