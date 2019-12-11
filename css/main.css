@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: lightgrey;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+p {
+    font-weight: bold;
+    text-align: center;
+}
+form {
+    background-color:rgba(72,72,72,0.4);
+	padding: 35px 35px 50px 35px;
+	width: 450px;
+	left: 50%;
+	position: absolute;
+    margin: 30px -260px;
+    text-align: left;
+    border: 2px solid black;
+    border-radius: 25px;
+}
+
+div#errores {
+    color: red;
+    font-style: italic;
+}
+
+input {
+    color:#3c3c3c;
+    font-size: 14px;
+    border: 1px solid grey;
+}
+
+input:hover{
+    border: 1px solid lightblue;
+}
+input[type="text"], input[type="password"] {
+    background-color: #fbfbfb;
+    margin-top: 10px;
+	margin-bottom: 10px;
+	width:100%;
+}
+
+input[type="file"] {
+    color: black;
+    text-align: center;
+    margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: lightblue;
+}
+
+input[type="submit"] {
+    color:black;
+    padding: 1%;
+    font-weight: bold;
+    background-color: #fbfbfb;
+	width:100%;
+}
