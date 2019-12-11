@@ -1,6 +1,7 @@
 <?php
 function destruir(){
     unset($_SESSION);
+    session_regenerate_id(true);
     session_destroy();
 }
 

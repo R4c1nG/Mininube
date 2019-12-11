@@ -47,6 +47,7 @@ function buscaUsuario($usuario, $nombreFichero)
 }
 
 // Dado un usuario y su contraseña comprueba si es lo tenemos en nuestro fichero
+//y si tiene una suscripcion activa
 function validaLogin($usuario, $pass, $nombreFichero, &$errores)
 {
     if ($resultado = buscaUsuario($usuario, $nombreFichero)) {

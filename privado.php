@@ -1,31 +1,46 @@
 <?php
 session_start();
 
-
 include_once ("libs/bGeneral.php");
 include_once ("libs/conf.php");
 include_once ("libs/bFechas.php");
 include_once ("libs/bFicheros.php");
 include_once ("libs/bSesiones.php");
 
-$errores = [];
-$user=$_SESSION['user'];
-$ruta = $rutaCarpetaPrivada.$user."/";
-
 
 if(isset($_SESSION['tiempo']) ) { 
     //Tiempo en segundos para dar vida a la sesión. 
-    $inactivo = 1200;//20min en este caso. 
+    $inactivo = 900;//20min en este caso. 
     //Calculamos tiempo de vida inactivo. 
     $vida_session = time() - $_SESSION['tiempo']; 
     //Compraración para redirigir página, si la vida de sesión sea mayor a el tiempo insertado en inactivo. 
     if($vida_session > $inactivo) { 
     //Removemos sesión. 
+        destruir();
+        header("location:login.php"); 
+    } 
+} 
+if (! isset($_SESSION["navegador"]) || $_SESSION["navegador"] != $_SERVER["HTTP_USER_AGENT"]) {
     destruir();
-    header("location:login.php"); } } 
-    $_SESSION['tiempo'] = time();
+    header("location:login.php"); 
+}
+
+$_SESSION['tiempo'] = time();
+
+if ($_SESSION["clicks"] >= 10) {
+    $_SESSION["clicks"] = 0;
+    session_regenerate_id();
+}
+
+
+
+$errores = [];
+$user=$_SESSION['user'];
+$ruta = $rutaCarpetaPrivada.$user."/";
+
     
 if(isset($_REQUEST["subir"])) {
+    $_SESSION["clicks"]++;
     $path = recoge("carpeta");
     if ($path != ""){
         $ruta = $rutaCarpetaPrivada.$user."/".$path."/";
@@ -37,6 +52,7 @@ if(isset($_REQUEST["subir"])) {
     }
 }
 if (isset($_REQUEST["borrar"])) {    
+    $_SESSION["clicks"]++;
     $nCarp = recoge("nomCarp");
     $ruta = $rutaCarpetaPublica."/".$nCarp;
     if (borrarCarpeta($ruta)){
@@ -47,6 +63,7 @@ if (isset($_REQUEST["borrar"])) {
     }
 }
 if (isset($_REQUEST["crear"])) {    
+    $_SESSION["clicks"]++;
     $nCarp = recoge("nomCarp");
     $ruta = $rutaCarpetaPrivada."/".$nCarp."/";
     if (crearCarpeta($ruta)){
@@ -57,6 +74,7 @@ if (isset($_REQUEST["crear"])) {
     }
 }
 if(isset($_REQUEST["volver"])){
+    $_SESSION["clicks"]++;
     header("location:user.php");
 }
 if(isset($_REQUEST["cerrar"])){

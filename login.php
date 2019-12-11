@@ -22,6 +22,7 @@ if (isset($_REQUEST["acceder"])) {
             $_SESSION["user"] = $usuario;
             $_SESSION["tiempo"] = time();
             $_SESSION["navegador"] = $_SERVER['HTTP_USER_AGENT'];
+            $_SESSION["clicks"] = 0;
             header("location:user.php");
         } else if (validaLogin($usuario, $pass, $ficheroUsuarios, $errores) == 1) {
             header("location:suscripcion.php");
