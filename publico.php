@@ -10,13 +10,14 @@ include_once ("libs/bSesiones.php");
 
 $errores = [];
 $user=$_SESSION['user'];
+$ruta = $rutaCarpetaPublica."/";
 
 if(isset($_REQUEST["subir"])) {
     $path = recoge("carpeta");
     if ($path != ""){
-        $ruta = $rutaCarpetaPrivada.$user."/".$path;
+        $ruta = $rutaCarpetaPublica."/".$path."/";
     }
-    if (campoFichero("privadoF",$ruta,$errores,$extensionesFicheros,$user)) {
+    if (campoFichero("publico",$ruta,$errores,$extensionesFicheros,$user)) {
         echo "Documento subido con éxito";
     } else {
         echo "Ha ocurrido un error";
@@ -42,11 +43,16 @@ if(isset($_REQUEST["cerrar"])){
 
 cabecera("Bienvenido");
 echo "<img src=\"img_usuarios/$user\" height='50px' width='50px'>";
-echo "Hola $user";
+echo "Hola $user <br><br>";
 $documentos = devuelveDirSubdir("documentos/publico");
-foreach ($documentos as $doc) {
-    $nom = str_replace("documentos/publico/", "",$doc);
-    echo "<br>$nom \t - \t<a href='$doc' download>Descargar</a>\t - \t<a href='$doc' target='_blank'>Ver archivo</a>";
+if (!empty($documentos)){
+    foreach ($documentos as $doc) {
+        $nom = str_replace("documentos/publico/", "",$doc);
+        echo "<br>$nom \t - \t<a href='$doc' download>Descargar</a>\t - \t<a href='$doc' target='_blank'>Ver archivo</a>";
+    }
+}
+else {
+    echo "La carpeta está vacia";
 }
 require ("forms/formPublico.php");
 

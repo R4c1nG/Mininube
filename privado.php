@@ -15,7 +15,7 @@ $ruta = $rutaCarpetaPrivada.$user."/";
 if(isset($_REQUEST["subir"])) {
     $path = recoge("carpeta");
     if ($path != ""){
-        $ruta = $rutaCarpetaPrivada.$user."/".$path;
+        $ruta = $rutaCarpetaPrivada.$user."/".$path."/";
     }
     if (campoFichero("privadoF",$ruta,$errores,$extensionesFicheros,$user)) {
         echo "Documento subido con éxito";
@@ -53,14 +53,17 @@ if(isset($_REQUEST["cerrar"])){
 
 cabecera("Bienvenido");
 echo "<img src=\"img_usuarios/$user\" height='50px' width='50px'>";
-echo "Hola $user";
+echo "Hola $user <br><br>";
 $documentos = devuelveDirSubdir("documentos/privada");
-/*
-foreach ($documentos as $doc) {
-    $nom = str_replace("documentos/$user/", "",$doc);
-    echo "<br>$nom \t - \t<a href='$doc' download>Descargar</a>\t - \t<a href='$doc'>Ver archivo</a>";
+if (!empty($documentos)){
+    foreach ($documentos as $doc) {
+        $nom = str_replace("documentos/$user/", "",$doc);
+        echo "<br>$nom \t - \t<a href='$doc' download>Descargar</a>\t - \t<a href='$doc'>Ver archivo</a>";
+    }
 }
-*/
+else {
+    echo "La carpeta está vacia";
+}
 require ("forms/formPrivado.php");
 
 ?>
