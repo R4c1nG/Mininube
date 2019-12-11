@@ -1,11 +1,11 @@
-<form class="borde" action="" method="POST">
+<form class="borde" action="" method="POST" enctype="multipart/form-data">
 	<p>	
-        <input type="file" NAME="privado">
-        <input type="submit" NAME="subir" value="SUBIR ARCHIVO">
+       Carpeta : <input type="text" NAME="carpeta"><br><br><input type="file" name="privadoF"><br><br>
+       <input type="submit" NAME="subir" value="SUBIR ARCHIVO"> 
         <input type="reset" name="cancelar" value="CANCELAR">
 	</p>
     <p>
-    Nombre del fichero: <input type="text">   
+    Nombre del fichero: <input type="text" name="fichero">   
     <input type="submit" NAME="borrar" value="BORRAR ARCHIVO">
     <input type="reset" name="cancelar" value="CANCELAR">
     </p>

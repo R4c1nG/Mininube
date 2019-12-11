@@ -10,18 +10,21 @@ include_once ("libs/bSesiones.php");
 
 $errores = [];
 $user=$_SESSION['user'];
+$ruta = $rutaCarpetaPrivada.$user."/";
 
 if(isset($_REQUEST["subir"])) {
     $path = recoge("carpeta");
-    $ruta = $rutaCarpetaPrivada."/".$path."/";
-    if (campoImagen("nCarp",$ruta,$errores,$extensionesFicheros,$user)) {
+    if ($path != ""){
+        $ruta = $rutaCarpetaPrivada.$user."/".$path;
+    }
+    if (campoFichero("privadoF",$ruta,$errores,$extensionesFicheros,$user)) {
         echo "Documento subido con éxito";
     } else {
         echo "Ha ocurrido un error";
     }
 }
 if (isset($_REQUEST["borrar"])) {    
-    $nCarp = recoge("nCarp");
+    $nCarp = recoge("nomCarp");
     $ruta = $rutaCarpetaPublica."/".$nCarp;
     if (borrarCarpeta($ruta)){
         echo "Carpeta borrada con éxito";
@@ -31,7 +34,7 @@ if (isset($_REQUEST["borrar"])) {
     }
 }
 if (isset($_REQUEST["crear"])) {    
-    $nCarp = recoge("nCarp");
+    $nCarp = recoge("nomCarp");
     $ruta = $rutaCarpetaPrivada."/".$nCarp."/";
     if (crearCarpeta($ruta)){
         echo "Carpeta creada con éxito";
@@ -52,10 +55,12 @@ cabecera("Bienvenido");
 echo "<img src=\"img_usuarios/$user\" height='50px' width='50px'>";
 echo "Hola $user";
 $documentos = devuelveDirSubdir("documentos/privada");
+/*
 foreach ($documentos as $doc) {
     $nom = str_replace("documentos/$user/", "",$doc);
     echo "<br>$nom \t - \t<a href='$doc' download>Descargar</a>\t - \t<a href='$doc'>Ver archivo</a>";
 }
+*/
 require ("forms/formPrivado.php");
 
 ?>

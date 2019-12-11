@@ -1,4 +1,4 @@
-<form class="borde" action="" method="POST">
+<form class="borde" action="" method="POST" enctype="multipart/form-data">
 	<p>	
 		Nombre del fichero:<input type="text" name="carpeta">
 		<!-- Hacer un select que dentro de la opcion haga un foreach (una opcion por nombre de carpeta) -->
