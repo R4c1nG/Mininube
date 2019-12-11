@@ -47,16 +47,24 @@ function buscaUsuario($usuario, $nombreFichero)
 }
 
 // Dado un usuario y su contraseña comprueba si es lo tenemos en nuestro fichero
-function validaLogin($usuario, $pass, $nombreFichero)
+function validaLogin($usuario, $pass, $nombreFichero, &$errores)
 {
     if ($resultado = buscaUsuario($usuario, $nombreFichero)) {
         if ($pass === $resultado[2]) {
-            return true;
+            $hoy = (new DateTime()) -> format("d-m-Y");
+            if ($hoy < $resultado[4]) {
+                return true;
+            } else {
+                $errores[] = "Necesitas ampliar tu suscripción para acceder";
+                return 1;
+            }
         } else {
-            return false;
+            $errores[] = "La contraseña es incorrecta";
+            return 0;
         }
     } else {
-        return false;
+        $errores[] = "El usuario no existe";
+        return 0;
     }
 }
 

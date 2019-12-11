@@ -18,11 +18,15 @@ if (isset($_REQUEST["acceder"])) {
     if(! empty($errores)) {
         header("location:login.php");
     } else {
-        if( validaLogin($usuario, $pass, $ficheroUsuarios) ) {
+        if(validaLogin($usuario, $pass, $ficheroUsuarios, $errores) ) {
             $_SESSION["user"] = $usuario;
+            $_SESSION["tiempo"] = time();
+            $_SESSION["navegador"] = $_SERVER['HTTP_USER_AGENT'];
             header("location:user.php");
+        } else if (validaLogin($usuario, $pass, $ficheroUsuarios, $errores) == 1) {
+            header("location:suscripcion.php");
         } else {
-            header("location:login.php");
+           require ("forms/formLogin.php");
         }
     }
 } else if(isset($_REQUEST["registro"])){
