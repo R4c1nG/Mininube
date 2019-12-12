@@ -70,8 +70,9 @@ if(isset($_REQUEST["cerrar"])){
 }
 
 cabecera("Bienvenido");
-echo "<img src=\"img_usuarios/$user\" height='50px' width='50px'>";
-echo "Hola $user <br><br>";
+echo "<img src=\"img_usuarios/$user\" height='150px' width='150px'><br>"; 
+
+echo " <p class='hola'> Hola $user <p>";
 $documentos = devuelveDirSubdir("documentos/publico");
 if (!empty($documentos)){
     foreach ($documentos as $doc) {

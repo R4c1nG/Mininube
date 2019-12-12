@@ -52,8 +52,9 @@ if(isset($_REQUEST["cerrar"])){
     header("location:login.php");
 }
 cabecera("Bienvenido");
-echo "<img src=\"img_usuarios/$user\" height='50px' width='50px'>";
-echo "Hola $user";
+echo "<img src=\"img_usuarios/$user\" height='150px' width='150px'><br>"; 
+
+echo " <p class='hola'> Hola $user <p>";
 require("forms/formUser.php");
 
 

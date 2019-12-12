@@ -21,6 +21,15 @@ color: rgb(138, 91, 4);
 font-size: 12px;
 
 }
+.hola{
+ font-size: 70px  ;
+ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ text-align: center; 
+color:  #b060be;
+    text-shadow: 5px 5px #e5f446;
+
+  
+}
 form {
     background-image: linear-gradient(to right bottom, #b063b7, #f9669b, #ff856d, #ffbb42, #e5f446);
 	padding: 35px 35px 50px 35px;
@@ -81,10 +90,19 @@ input[type="submit"] {
     width:60%;
     height: 50px;
 }
+
+input[type="reset"]:hover {
+    background-color: lightblue;
+}
+
+input[type="reset"] {
+    color:black;
+    padding: 1%;
+    font-weight: bold;
+    background-color: #fbfbfb;
+    width:60%;
+    height: 50px;
+}
 input[type="radio"] +label{
   background-color: tomato;
 }
-input[type="radio"]:checked + label {
-    background-position: 0 -71px; width: 24px; height: 24px;
-    }
-    

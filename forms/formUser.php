@@ -1,3 +1,5 @@
+<?php echo '<link rel="stylesheet" type="text/css" href="css/main.css">'; ?>
+
 <form class="borde" action="" name="inicio" method="POST">
 	<p>	
         <input type="submit" NAME="publico" value="Ir a la zona pública">

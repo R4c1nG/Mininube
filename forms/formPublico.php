@@ -1,3 +1,5 @@
+<?php echo '<link rel="stylesheet" type="text/css" href="css/main.css">'; ?>
+
 <form class="borde" action="" method="POST" enctype="multipart/form-data">
 	<br><br>
 	<p>	
