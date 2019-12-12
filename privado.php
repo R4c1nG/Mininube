@@ -57,23 +57,31 @@ if (isset($_REQUEST["borrar"])) {
     $nCarp = recoge("nomCarp");
     $ruta = "documentos/".$nCarp;
     if (borrarCarpeta($ruta)){
-        echo "Carpeta borrada con éxito";
+        echo "Carpeta no borrada";
     }
     else {
-        echo "Carpeta no borrada";
+        echo "Carpeta borrada con éxito";
     }
 }
 
 //borrar fichero
 if (isset($_REQUEST["borrarF"])) {    
     $_SESSION["clicks"]++;
+    
     $nCarp = recoge("fichero");
-    $ruta = "documentos/".$nCarp;
+    if(!empty($nCarp)){
+$ruta = "documentos/".$nCarp;
     if (borrarFichero($ruta)){
-        echo "Fichero borrado con éxito";
+
+        echo "Fichero no borrado";
     }
     else {
-        echo "Fichero  no borrado";
+        echo "Fichero  borrado con exito";
+    }
+
+    }
+    else{
+        echo("No ha escrito el nombre del archivo");
     }
 }
 
