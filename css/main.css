@@ -3,45 +3,63 @@
 }
 
 body {
-    background: lightgrey;
+    background: rgba(206, 125, 125, 0.411);
     font-family: 'Titillium Web', sans-serif;
 }
 
-p {
+div{
     font-weight: bold;
     text-align: center;
+    color: white;
+    
+}
+strong{
+    font-size: 30px;
+}
+.sub{
+color: rgb(138, 91, 4);
+font-size: 12px;
+
 }
 form {
-    background-color:rgba(72,72,72,0.4);
+    background-image: linear-gradient(to right bottom, #b063b7, #f9669b, #ff856d, #ffbb42, #e5f446);
 	padding: 35px 35px 50px 35px;
-	width: 450px;
+	width: 600px;
 	left: 50%;
 	position: absolute;
     margin: 30px -260px;
     text-align: left;
-    border: 2px solid black;
+    border: 2px solid rgb(44, 43, 43);
     border-radius: 25px;
+    box-shadow: #272227cc 10px 10px;
 }
 
 div#errores {
     color: red;
     font-style: italic;
+    font-size: 16px;
 }
 
 input {
     color:#3c3c3c;
-    font-size: 14px;
+    font-size: 20px;
     border: 1px solid grey;
+    border-radius: 25px;
+}
+.nombre{
+    width: 100px;
 }
 
 input:hover{
-    border: 1px solid lightblue;
+    border: 5px solid lightblue;
+    
 }
 input[type="text"], input[type="password"] {
     background-color: #fbfbfb;
     margin-top: 10px;
 	margin-bottom: 10px;
-	width:100%;
+    width:50%;
+    height: 40px;
 }
 
 input[type="file"] {
@@ -60,5 +78,13 @@ input[type="submit"] {
     padding: 1%;
     font-weight: bold;
     background-color: #fbfbfb;
-	width:100%;
+    width:60%;
+    height: 50px;
 }
+input[type="radio"] +label{
+  background-color: tomato;
+}
+input[type="radio"]:checked + label {
+    background-position: 0 -71px; width: 24px; height: 24px;
+    }
+    
