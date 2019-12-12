@@ -162,6 +162,19 @@ function borrarCarpeta($carpeta) {
       }
       rmdir($carpeta);
 }
+//borrar Ficheros 
+function borrarFichero($ruta){
+    $guarda=explode("/",$ruta);
+    $dir=$guarda[0];
+    $fichero=$guarda[1];
+       print_r(devuelveDirSubdir($dir));
+       foreach(glob($dir . "/*") as $archivos_carpeta){   
+    if (is_file($archivos_carpeta) && $archivos_carpeta===$fichero ){
+           unlink($archivos_carpeta);
+        }else {echo "no funcciona";
+    }
+    } 
 
+  }
 
 ?>

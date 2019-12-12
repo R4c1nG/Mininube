@@ -8,7 +8,7 @@
   <br><br>
     <p>
     Nombre del fichero: <input type="text" name="fichero"><br><br>
-    <input type="submit" NAME="borrar" value="BORRAR ARCHIVO">
+    <input type="submit" NAME="borrarF" value="BORRAR ARCHIVO">
     <input type="reset" name="cancelar" value="CANCELAR">
     </p>
     <br><br>

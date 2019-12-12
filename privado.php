@@ -51,10 +51,11 @@ if(isset($_REQUEST["subir"])) {
         echo "Ha ocurrido un error";
     }
 }
+//borrar carpeta
 if (isset($_REQUEST["borrar"])) {    
     $_SESSION["clicks"]++;
     $nCarp = recoge("nomCarp");
-    $ruta = $rutaCarpetaPublica."/".$nCarp;
+    $ruta = "documentos/".$nCarp;
     if (borrarCarpeta($ruta)){
         echo "Carpeta borrada con éxito";
     }
@@ -62,6 +63,20 @@ if (isset($_REQUEST["borrar"])) {
         echo "Carpeta no borrada";
     }
 }
+
+//borrar fichero
+if (isset($_REQUEST["borrarF"])) {    
+    $_SESSION["clicks"]++;
+    $nCarp = recoge("fichero");
+    $ruta = "documentos/".$nCarp;
+    if (borrarFichero($ruta)){
+        echo "Fichero borrado con éxito";
+    }
+    else {
+        echo "Fichero  no borrado";
+    }
+}
+
 if (isset($_REQUEST["crear"])) {    
     $_SESSION["clicks"]++;
     $nCarp = recoge("nomCarp");
