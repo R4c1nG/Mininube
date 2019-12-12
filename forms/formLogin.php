@@ -2,11 +2,11 @@
 
 <form class="borde" action="" name="inicio" method="POST">
 	<div>
-	Usuario <p class="sub">	(letras y números entre 7 y 15 caracteres sin ñ ni tildes. Requerido): 		<br></p>
+	<strong>Usuario</strong> <p class="sub">	(letras y números entre 7 y 15 caracteres sin ñ ni tildes. Requerido): 		<br></p>
 		<input NAME="usuario" type="text">
 	</div>
 	<div>
-	Password<p class="sub">
+	<strong>Password</strong><p class="sub">
 		 (Entre 8 y 15 caracteres. Carácteres permitidos letras, números y _*\/$&#. No se permiten ñ ni tildes. Requerido): 		<br>	</p>
 		<input NAME="pass" type="password">
 </div>
