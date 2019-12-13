@@ -110,6 +110,7 @@ echo "<img src=\"img_usuarios/$user\" height='150px' width='150px'><br>";
 
 echo " <p class='hola'> Hola $user <p>";
 $documentos = devuelveDirSubdir("documentos/privada");
+if(isset($_REQUEST["mostrar"])){
 if (!empty($documentos)){
     foreach ($documentos as $doc) {
         $nom = str_replace("documentos/$user/", "",$doc);
@@ -118,7 +119,7 @@ if (!empty($documentos)){
 }
 else {
     echo "La carpeta está vacia";
-}
+}}
 require ("forms/formPrivado.php");
 
 ?>

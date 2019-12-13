@@ -2,3 +2,4 @@ testuser;racingerz;asdasd123;26-12-1997;09-01-2020;img_usuarios/racingerz;09-12-
 bea;bcouchoud;asdasdasd;04-10-1999;09-01-2020;img_usuarios/bcouchoud;09-12-2019
 wissal;wissywissy;asdasdasd;10-08-1998;11-02-2020;img_usuarios/wissywissy;11-12-2019
 tesu;idontknow;asdasd123;12-12-1500;11-01-2020;img_usuarios/idontknow;11-12-2019
+Wissal;Wissyteb;12345678;10-08-1998;13-01-2020;img_usuarios/Wissyteb;13-12-2019
