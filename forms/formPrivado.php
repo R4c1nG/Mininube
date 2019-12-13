@@ -24,9 +24,7 @@
   </p>
 </div>
   <br><br>
-  <p>
-  <input type="submit" name="mostrar" value="Mostrar Ficheros">	</p>
-    <p> <br><br><br>
+    <p>
 		<input type="submit" name="volver" value="VOLVER">
 	</p>
     <p>

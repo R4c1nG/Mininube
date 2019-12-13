@@ -19,6 +19,12 @@ function escribeLinea($nombreFichero, $linea)
     }
 }
 
+function guardarAlPrincipio ($ruta, $msg) {
+    $archivo = file_get_contents($ruta);
+    $msg=$msg.$archivo;
+    file_put_contents($ruta, $msg);
+}
+
 /*
  * Busca un usuario en un fichero
  * Cada usuario está en una línea con el siguiente formato
@@ -36,6 +42,8 @@ function buscaUsuario($usuario, $nombreFichero)
                 $datos = explode(";", $datos);
                 if ($usuario == $datos[1]) {
                     $resultado = $datos;
+                    fclose($fichero);
+                    return $resultado;
                 }
             }
         }

@@ -47,6 +47,10 @@ if(isset($_REQUEST["cambia"])){
     $_SESSION["clicks"]++;
     header("location:editaPerfil.php");
 }
+if(isset($_REQUEST["sus"])){
+    $_SESSION["clicks"]++;
+    header("location:suscripcion.php");
+}
 if(isset($_REQUEST["cerrar"])){
     destruir();
     header("location:login.php");

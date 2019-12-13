@@ -10,6 +10,9 @@
     <p>
 		<input type="submit" name="cambia" value="CAMBIAR IMAGEN DE PERFIL">
 	</p>
+	<p>
+		<input type="submit" name="sus" value="AMPLIAR SUSCRIPCION">
+	</p>
     <p>
 		<input type="submit" name="cerrar" value="CERRAR SESIÓN">
 	</p>

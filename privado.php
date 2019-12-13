@@ -55,7 +55,7 @@ if(isset($_REQUEST["subir"])) {
 if (isset($_REQUEST["borrar"])) {    
     $_SESSION["clicks"]++;
     $nCarp = recoge("nomCarp");
-    $ruta = "documentos/".$nCarp;
+    $ruta = "documentos/".$user."/".$nCarp;
     if (borrarCarpeta($ruta)){
         echo "Carpeta no borrada";
     }
@@ -70,7 +70,7 @@ if (isset($_REQUEST["borrarF"])) {
     
     $nCarp = recoge("fichero");
     if(!empty($nCarp)){
-$ruta = "documentos/".$nCarp;
+    $ruta = "documentos/".$user."/".$nCarp;
     if (borrarFichero($ruta)){
 
         echo "Fichero no borrado";
@@ -88,7 +88,7 @@ $ruta = "documentos/".$nCarp;
 if (isset($_REQUEST["crear"])) {    
     $_SESSION["clicks"]++;
     $nCarp = recoge("nomCarp");
-    $ruta = $rutaCarpetaPrivada."/".$nCarp."/";
+    $ruta = $rutaCarpetaPrivada."/".$user."/".$nCarp."/";
     if (crearCarpeta($ruta)){
         echo "Carpeta creada con éxito";
     }
@@ -110,7 +110,6 @@ echo "<img src=\"img_usuarios/$user\" height='150px' width='150px'><br>";
 
 echo " <p class='hola'> Hola $user <p>";
 $documentos = devuelveDirSubdir("documentos/privada");
-if(isset($_REQUEST["mostrar"])){
 if (!empty($documentos)){
     foreach ($documentos as $doc) {
         $nom = str_replace("documentos/$user/", "",$doc);
@@ -119,7 +118,7 @@ if (!empty($documentos)){
 }
 else {
     echo "La carpeta está vacia";
-}}
+}
 require ("forms/formPrivado.php");
 
 ?>
