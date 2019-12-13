@@ -4,6 +4,7 @@
 	<br><br>
 	<div> <strong>Sube tus ficheros :</strong> <br> <p>
     Puedes eligir una carpeta o subirlo directamente aqui
+	<input type="text" name="carpeta"><br><br>
 		<!-- Hacer un select que dentro de la opcion haga un foreach (una opcion por nombre de carpeta) -->
         <input type="file" NAME="publico">
         <input type="submit" NAME="subir" value="SUBIR ARCHIVO">
