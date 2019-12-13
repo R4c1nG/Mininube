@@ -5,3 +5,4 @@ bea;bcouchoud;asdasdasd;04-10-1999;09-01-2020;img_usuarios/bcouchoud;09-12-2019
 wissal;wissywissy;asdasdasd;10-08-1998;11-02-2020;img_usuarios/wissywissy;11-12-2019
 testuser;racingerz;asdasd123;26-12-1997;09-02-2020;img_usuarios/racingerz;09-12-2019
 testing;testing;asdasd123;11-11-1111;13-02-2020;img_usuarios/testing
+wissal;wiswiswis;wiswiswis;10-08-1998;13-02-2020;img_usuarios/wiswiswis;13-12-2019

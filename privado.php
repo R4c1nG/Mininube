@@ -109,7 +109,7 @@ cabecera("Bienvenido");
 echo "<img src=\"img_usuarios/$user\" height='150px' width='150px'><br>"; 
 
 echo " <p class='hola'> Hola $user <p>";
-$documentos = devuelveDirSubdir("documentos/privada");
+$documentos = devuelveDirSubdir("documentos/$user/");
 if (!empty($documentos)){
     foreach ($documentos as $doc) {
         $nom = str_replace("documentos/$user/", "",$doc);
